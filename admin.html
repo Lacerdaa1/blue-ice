@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Admin · ICE BLLUH Barbearia</title>
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estilos-do-site.css" />
+  </head>
+  <body>
+    <header class="topo">
+      <img src="img/logo.png" alt="ICE BLLUH" class="topo__logo" />
+      <nav>
+        <a href="index.html">Site</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main class="secao">
+      <h2>Admin</h2>
+
+      <form id="login" class="login" hidden>
+        <input id="login-senha" type="password" placeholder="Senha da barbearia" />
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+      <p id="admin-aviso" class="agenda__aviso"></p>
+
+      <div id="painel" hidden>
+        <div class="abas">
+          <button type="button" class="aba aba--ativa" data-aba="agendamentos">Agendamentos</button>
+          <button type="button" class="aba" data-aba="precos">Preços</button>
+        </div>
+
+        <!-- Agendamentos -->
+        <section id="aba-agendamentos">
+          <div class="filtros">
+            <button type="button" data-filtro="proximos" class="filtro filtro--ativo">Próximos</button>
+            <button type="button" data-filtro="hoje" class="filtro">Hoje</button>
+            <button type="button" data-filtro="passados" class="filtro">Passados</button>
+            <button type="button" data-filtro="todos" class="filtro">Todos</button>
+            <select id="filtro-barbeiro" class="filtro-select" aria-label="Filtrar por barbeiro">
+              <option value="">Todos os barbeiros</option>
+              <option value="Ice">Ice</option>
+              <option value="Alisson">Alisson</option>
+            </select>
+          </div>
+          <p id="resumo" class="resumo"></p>
+          <div id="lista-pedidos"></div>
+        </section>
+
+        <!-- Preços -->
+        <section id="aba-precos" hidden>
+          <p class="dica dica--solta">Altere o valor e clique em Salvar. O site e o Gelinho passam a usar o novo preço na hora.</p>
+          <div id="lista-precos"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="rodape">Gelo no nome e revolução no estilo · ICE BLLUH Barbearia</footer>
+    <script src="js/painel-admin.js"></script>
+  </body>
+</html>
